@@ -1,14 +1,21 @@
 import React from 'react';
-import Navbar from './Navbar/navbar';
-import Footer from './Footer/footer';
+import { Routes, Route } from 'react-router-dom';
+import PrivateRoute from './Router/privaterouting';
 import Home from './Home/home';
 import Login from './Login/login';
+import Profile from './Profile/profile';
 import './style.css';
 
 export default function App() {
   return (
     <div>
-      <Home />
+      <Routes>
+        <Route exact path="/" element={<Login />} />
+        <Route element={<PrivateRoute />}>
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/profile" element={<Profile />} />
+        </Route>
+      </Routes>
     </div>
     //==========================================================Login========================================================
     // <div>
