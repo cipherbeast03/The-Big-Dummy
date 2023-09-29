@@ -1,4 +1,8 @@
-import rootReducer from './Actions/actions';
-import { createstore } from 'redux';
-const store = createstore(rootReducer);
+import rootReducer from './Reducer/inout';
+import { createStore } from 'redux';
+
+const store = createStore(
+  rootReducer
+  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 export default store;
