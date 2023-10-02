@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../Navbar/navbar';
 import Footer from '../Footer/footer';
 import './login.css';
 
 function Login() {
+  const { username, setUsername } = useState();
   return (
     <div className="login-container">
       {/* <Navbar /> */}
