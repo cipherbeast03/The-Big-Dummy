@@ -6,6 +6,7 @@ import './login.css';
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [buttonname, setButtonname] = useState(true);
 
   const loginStatus = () => {};
   return (
@@ -37,13 +38,18 @@ function Login() {
             <input
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              type="password"
+              type={buttonname ? 'password' : 'text'}
               placeholder="password"
             />
           </div>
           <div className="button-section">
-            <button>Show password</button>
+            <button onClick={() => setButtonname(!buttonname)}>
+              {buttonname ? 'Show Password' : 'Hide Password'}
+            </button>
             <button>Login</button>
+          </div>
+          <div className="message-section">
+            <p>Logging in...</p>
           </div>
         </div>
       </center>
