@@ -3,10 +3,11 @@
 }
 .login-card {
   background-color: #12486b;
+  border-radius: 50px;
   text-align: center;
   color: white;
-  height: 50vh;
-  width: 40vh;
+  height: 47vh;
+  width: 45vh;
 }
 
 .login-card img {

@@ -4,7 +4,10 @@ import Footer from '../Footer/footer';
 import './login.css';
 
 function Login() {
-  const { username, setUsername } = useState();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const loginStatus = () => {};
   return (
     <div className="login-container">
       {/* <Navbar /> */}
@@ -25,8 +28,18 @@ function Login() {
               <strong>password:</strong> Shanna@melissa.tv
             </p>
             <h1>Login</h1>
-            <input type="text" placeholder="username" />
-            <input type="password" placeholder="password" />
+            <input
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              type="text"
+              placeholder="username"
+            />
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="password"
+            />
           </div>
           <div className="button-section">
             <button>Show password</button>
